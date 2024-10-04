@@ -1,0 +1,19 @@
+services:
+  rai:
+    build: .
+    ports:
+      - 8501:8501
+    environment:
+      - OPENAI_API_KEY
+    volumes:
+      - ./src:/temp
+      - ./build:/src
+    # command: tail -f /dev/null
+    command:
+      - /bin/bash
+      - -c
+      - |
+        rm -rf src/panther_whoami
+        cp -r /temp/panther_whoami src/panther_whoami
+        yes | poetry run parse_whoami_package src/panther_whoami/description/
+        cp -r src/panther_whoami /src/panther_whoami

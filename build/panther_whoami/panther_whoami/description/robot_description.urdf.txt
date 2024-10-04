@@ -1,0 +1,13 @@
+The URDF file describes a robot named "panther," which is designed for various applications, potentially including robotics simulation and real-world operations. The robot's structure is composed of multiple links and joints that facilitate its movements and interactions with the environment.
+
+### Links
+1. **Base Link**: This is the primary link of the robot, serving as the foundation for all other components. It typically houses essential systems and provides structural integrity.
+2. **Wheel Links**: The robot is equipped with wheels that are likely defined in the included `panther_macro.urdf.xacro`. These links are crucial for mobility and may incorporate specific configurations outlined in the `WH01.yaml` file.
+3. **Sensor Links**: The robot may include links for various sensors, including IMU (Inertial Measurement Unit) links positioned based on the specified `imu_xyz` and `imu_rpy` parameters, which determine their spatial orientation and position.
+
+### Joints
+1. **Wheel Joints**: Each wheel is connected to the base link via revolute joints, allowing for rotation and thus enabling movement. The control of these joints is managed through the controller configuration defined in `WH01_controller.yaml`.
+2. **Articulated Joints**: Depending on the robot's design, there may be additional articulated joints for components that require bending or tilting, enhancing the robot's range of motion.
+3. **Sensor Joints**: Joints may also be defined for the attachment of sensors, allowing for adjustments in orientation to optimize data collection.
+
+Overall, the "panther" robot is modular and configurable, with capabilities defined by its links and joints that are essential for its functioning in both simulated and real environments. The use of Xacro allows for flexible parameterization and modular design, making it suitable for various applications.

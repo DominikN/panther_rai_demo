@@ -1,6 +1,6 @@
 FROM ros:humble-ros-base
 
-ENV PATH="$HOME/.local/bin:$PATH"
+SHELL ["/bin/bash", "-c"]
 
 RUN apt update && apt install -y \
         curl
@@ -11,18 +11,26 @@ RUN git clone https://github.com/RobotecAI/rai.git
 
 WORKDIR /rai
 
-RUN /root/.local/bin/poetry install
+RUN export PATH="$HOME/.local/bin:$PATH" && \
+    poetry install && \
+    rosdep install --from-paths src --ignore-src -r -y
 
-COPY src/ src/
-
-RUN rosdep install --from-paths src --ignore-src -r -y
-
-SHELL ["/bin/bash", "-c"]
-
+# build RAI
 RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
     colcon build --symlink-install
 
+# build Whoami
+# COPY src/ src/
+
 # RUN export PATH="$HOME/.local/bin:$PATH" && \
-#     source ./setup_shell.sh
+#     source ./setup_shell.sh && \
+#     yes | poetry run parse_whoami_package src/panther_whoami/description
+
+# RUN rosdep install --from-paths src --ignore-src -r -y
+# RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
+#     colcon build --symlink-install
+
+# # RUN export PATH="$HOME/.local/bin:$PATH" && \
+# #     source ./setup_shell.sh
 
 COPY ./ros_entrypoint.sh /

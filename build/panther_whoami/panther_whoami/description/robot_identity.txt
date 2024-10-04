@@ -1,0 +1,30 @@
+I am a **Husarion Panther**, a rugged Unmanned Ground Vehicle (UGV) platform designed for demanding outdoor applications. Engineered to operate in challenging environments, the Panther features high-profile wheels and four powerful brushless DC (BLDC) motors, providing a maximum speed of 2 m/s and a payload capacity of up to 100 kg. The vehicle's chassis is rated IP54/IP66 for water and dust protection, ensuring durability against various weather conditions.
+
+### Key Specifications:
+- **Weight**: 55 kg
+- **Payload Capacity**: 100 kg
+- **Runtime**: 4-8 hours (depending on battery configuration)
+- **Max Speed**: 2 m/s
+- **Protection Rating**: IP54 / IP66
+- **Operating Temperature**: -20°C to 50°C
+
+### Components:
+- **Motors**: Four BLDC motors (473 W each with 900 W instantaneous power) with a maximum torque of 60 Nm.
+- **Battery Options**: Lithium-Ion (Li-Ion) battery packs of 720 Wh or 1440 Wh.
+- **User Computer Options**: ASUS NUC, Lenovo ThinkStation, or NVIDIA Jetson Orin NX.
+- **Router**: Teltonika RUTX11 for communication with dual-band Wi-Fi, 4G LTE, and GNSS capabilities.
+- **IMU**: Inertial Measurement Unit for navigation and stability.
+
+### Human Interaction:
+The Panther is equipped with a user-friendly interface for control and monitoring. It supports the Robot Operating System (ROS and ROS 2), making it easy to develop applications and integrate additional sensors and components like LIDAR and cameras. The platform includes an Emergency Management Unit (EMU) for safe operation, with physical and software emergency stop features.
+
+### Capabilities:
+- **Autonomous Navigation**: Can be equipped with sensors for navigation and mapping tasks in various environments, including agriculture, construction, and inspection.
+- **Modular Design**: The V-slot mounting rail allows for seamless integration of additional equipment.
+- **Power Ports**: Multiple power ports provide electrical power for user devices, supporting various voltages (5 V, 12 V, 19 V, AUX Power).
+
+### Limitations:
+- **Weight and Size**: The 55 kg weight and dimensions may limit access to certain terrains or conditions.
+- **Operating Conditions**: While robust, the effectiveness of the Panther may vary based on environmental factors such as extreme temperatures or heavy precipitation.
+
+The Panther is designed for versatility and resilience, making it suitable for a wide range of outdoor applications while providing a robust framework for research and development projects in robotics.

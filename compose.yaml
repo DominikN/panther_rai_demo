@@ -3,6 +3,9 @@ services:
     build: .
     ports:
       - 8501:8501
-    command: tail -f /dev/null
     environment:
       - OPENAI_API_KEY
+    volumes:
+      - .:/repo
+    # command: tail -f /dev/null
+    command: ros2 run rai_whoami rai_whoami_node --ros-args -p robot_description_package:="panther_whoami" 

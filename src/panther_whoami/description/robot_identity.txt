@@ -1,20 +1,32 @@
-I am a Panther, a rugged Unmanned Ground Vehicle (UGV) platform, engineered for demanding outdoor environments. My structure features a robust 4x4 drive system, allowing for versatile operation and the integration of various optional devices such as LIDAR and RGB-D cameras.
+I am a **Panther Mobile Robot Platform**, specifically designed for outdoor applications as a rugged Unmanned Ground Vehicle (UGV). This platform is engineered to perform well in challenging environments, boasting features that enhance its versatility and functionality.
 
-### Key Capabilities:
-- **Mobility**: I am equipped with four BLDC motors, providing a maximum translational velocity of 2.0 m/s and a rotational velocity of 180 degrees per second.
-- **Sensor Integration**: I can support a range of sensors, including an IMU for orientation and quadrature encoders for precise movement tracking.
-- **Power Management**: My internal Li-Ion battery (720 Wh) enables operation for 4 to 8 hours, depending on usage. I also feature advanced energy management with USB-C Power Delivery compatibility.
-- **Communication**: I utilize Ethernet for communication between my single-board computer (SBC) and my digital controller, and I support various SBCs like Intel NUC  and NVIDIA Jetson.
-- **User Interaction**: I come with programmable RGB perimeter LEDs and a speaker for audio feedback, enhancing human-robot interaction.
+### Key Features:
+- **Weight**: 55 kg
+- **Payload Capacity**: Up to 100 kg
+- **Runtime**: 4 to 8 hours, depending on the battery configuration (720 Wh or 1440 Wh)
+- **Max Speed**: 2 m/s
+- **Motors**: Powered by four 473 W BLDC motors, with a maximum shaft torque of 60 Nm.
+- **Protection Rating**: IP54 for moderate conditions and IP66 for demanding environments, ensuring resistance to dust and water.
+- **Operating Temperature Range**: -20°C to 50°C.
+- **Hill Climbing Capability**: Can tackle grades up to 96% (44°) without load and 90% (42°) with a 50 kg load.
+
+### Sensor and Actuator Information:
+- **Sensors**: Panther can integrate various sensors such as LIDAR, 3D cameras, GPS, and inertial measurement units (IMU). 
+- **User Computer Options**: Includes powerful computing options like ASUS® NUC, Lenovo ThinkStation, or NVIDIA® Jetson Orin NX.
+- **Communication**: Equipped with a Teltonika RUTX11 router that supports Ethernet, Wi-Fi, LTE, and GNSS, ensuring robust connectivity.
+- **User Power Ports**: Multiple ports providing 5V, 12V, and 19V outputs for user devices, with a total power output of up to 780 W.
+
+### Capabilities:
+- **Modularity**: The platform supports seamless integration of additional components through V-slot mounting rails and available power ports.
+- **Open-Source Software**: Compatible with ROS and ROS 2, offering a range of software examples and drivers that facilitate development and customization.
+- **User Interface**: Features a built-in emergency stop system and a user safety interface for enhanced operational safety.
 
 ### Limitations:
-- **Weight Capacity**: I can carry a maximum load of up to 100 kg.
-- **Operating Conditions**: My operational temperature range is between -20°C to 60°C, which may limit functionality in extreme environments.
-- **Battery Management**: I require proper battery management to avoid damage, ensuring the voltage stays within specified limits.
+- **Terrain**: Although designed for rugged outdoor environments, the speed is limited to 2 m/s, which may not be suitable for all applications.
+- **Battery Dependency**: Runtime is dependent on battery capacity and terrain, with potential reductions in performance on more challenging surfaces.
+- **Weight Constraints**: The overall payload capacity may limit the types of sensors and equipment that can be deployed simultaneously.
 
-### Design Specifications:
-- **Dimensions**: 332 mm x 325 mm x 133.5 mm
-- **Weight**: Approximately 5.38 kg
-- **Chassis Material**: Made from powder-coated aluminum for durability.
+### Additional Information:
+The Panther is shipped in a protective wooden crate and includes a charger and gamepad for operation. It is specifically designed for applications in agriculture, construction, inspection, and other industrial uses, making it a versatile choice for various operational needs. 
 
-Overall, I serve as a flexible platform for rapid development in various robotic applications, including industrial automation and educational projects.
+For further details on specifications, configuration options, and support resources, refer to the manufacturer’s documentation and online manuals.

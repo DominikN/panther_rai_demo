@@ -1,0 +1,1 @@
+It seems like there was no URDF file provided in your message. Please share the URDF file, and I'll be happy to help you create a detailed description of its links and joints.

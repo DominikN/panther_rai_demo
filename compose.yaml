@@ -1,0 +1,8 @@
+services:
+  rai:
+    build: .
+    ports:
+      - 8501:8501
+    command: tail -f /dev/null
+    environment:
+      - OPENAI_API_KEY

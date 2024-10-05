@@ -1,13 +1,21 @@
-The URDF file describes a robot named "panther," which is designed for various applications, potentially including robotics simulation and real-world operations. The robot's structure is composed of multiple links and joints that facilitate its movements and interactions with the environment.
+The URDF file describes a robot named "panther," which is equipped with various components and parameters for simulating and controlling its behavior. Here’s a detailed description of the links and joints defined in the URDF:
 
 ### Links
-1. **Base Link**: This is the primary link of the robot, serving as the foundation for all other components. It typically houses essential systems and provides structural integrity.
-2. **Wheel Links**: The robot is equipped with wheels that are likely defined in the included `panther_macro.urdf.xacro`. These links are crucial for mobility and may incorporate specific configurations outlined in the `WH01.yaml` file.
-3. **Sensor Links**: The robot may include links for various sensors, including IMU (Inertial Measurement Unit) links positioned based on the specified `imu_xyz` and `imu_rpy` parameters, which determine their spatial orientation and position.
+1. **Base Link**: The primary structural component of the robot, serving as the foundation for all other links and joints. It houses the essential electronics and provides mounting points for sensors and actuators.
+
+2. **Wheels**: The robot features multiple wheel links that facilitate movement. Each wheel is typically mounted on its own link, allowing for independent rotation and control.
+
+3. **IMU Link**: This link is associated with the Inertial Measurement Unit (IMU), which is crucial for sensing orientation and movement. Its position is defined by the `imu_xyz` and `imu_rpy` parameters, indicating its placement within the robot frame.
+
+4. **Sensor Links**: Depending on the robot's configuration, it may include various sensor links for LiDAR and cameras, which are essential for navigation and obstacle detection.
 
 ### Joints
-1. **Wheel Joints**: Each wheel is connected to the base link via revolute joints, allowing for rotation and thus enabling movement. The control of these joints is managed through the controller configuration defined in `WH01_controller.yaml`.
-2. **Articulated Joints**: Depending on the robot's design, there may be additional articulated joints for components that require bending or tilting, enhancing the robot's range of motion.
-3. **Sensor Joints**: Joints may also be defined for the attachment of sensors, allowing for adjustments in orientation to optimize data collection.
+1. **Wheel Joints**: These joints connect the wheels to the base link, allowing for rotational movement. They can be set up to support differential drive or omnidirectional movement, depending on the robot's design.
 
-Overall, the "panther" robot is modular and configurable, with capabilities defined by its links and joints that are essential for its functioning in both simulated and real environments. The use of Xacro allows for flexible parameterization and modular design, making it suitable for various applications.
+2. **IMU Joint**: This joint allows the IMU to pivot or rotate according to the robot's orientation. It is essential for maintaining accurate readings of the robot's tilt and angular velocity.
+
+3. **Articulated Joints**: If the robot includes any manipulative arms or additional components, articulated joints would connect these parts, allowing for a range of motion and flexibility in tasks.
+
+4. **Component Joints**: The robot integrates various components (like sensors and controllers) through additional joints that facilitate movement or adjust the orientation of these components.
+
+Overall, the "panther" robot is designed for dynamic interaction with its environment, equipped with a robust framework of links and joints that allow it to perform complex tasks while maintaining stability and control.

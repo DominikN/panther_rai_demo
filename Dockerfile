@@ -1,3 +1,6 @@
+# syntax=docker/dockerfile:1.10.0
+# https://docs.docker.com/build/buildkit/dockerfile-release-notes/
+
 FROM ros:humble-ros-base
 
 SHELL ["/bin/bash", "-c"]
@@ -20,11 +23,12 @@ RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
     colcon build --symlink-install
 
 # build Whoami
-# COPY src/ src/
+COPY src/ src/
 
-# RUN export PATH="$HOME/.local/bin:$PATH" && \
-#     source ./setup_shell.sh && \
-#     yes | poetry run parse_whoami_package src/panther_whoami/description
+RUN --mount=type=secret,id=OPENAI_API_KEY,env=OPENAI_API_KEY \
+    export PATH="$HOME/.local/bin:$PATH" && \
+    source ./setup_shell.sh && \
+    yes | poetry run parse_whoami_package src/panther_whoami/description
 
 # RUN rosdep install --from-paths src --ignore-src -r -y
 # RUN source /opt/ros/$ROS_DISTRO/setup.bash && \

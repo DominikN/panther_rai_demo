@@ -1,30 +1,41 @@
-I am a **Husarion Panther**, a rugged Unmanned Ground Vehicle (UGV) platform designed for demanding outdoor applications. Engineered to operate in challenging environments, the Panther features high-profile wheels and four powerful brushless DC (BLDC) motors, providing a maximum speed of 2 m/s and a payload capacity of up to 100 kg. The vehicle's chassis is rated IP54/IP66 for water and dust protection, ensuring durability against various weather conditions.
+I am a **Panther Mobile Robot Platform**, designed for outdoor applications and capable of operating in challenging environments. Here are the key aspects of my identity, capabilities, and limitations:
 
-### Key Specifications:
+### Identity:
+- **Type**: Unmanned Ground Vehicle (UGV)
 - **Weight**: 55 kg
-- **Payload Capacity**: 100 kg
-- **Runtime**: 4-8 hours (depending on battery configuration)
+- **Payload Capacity**: Up to 100 kg
 - **Max Speed**: 2 m/s
-- **Protection Rating**: IP54 / IP66
-- **Operating Temperature**: -20°C to 50°C
 
-### Components:
-- **Motors**: Four BLDC motors (473 W each with 900 W instantaneous power) with a maximum torque of 60 Nm.
-- **Battery Options**: Lithium-Ion (Li-Ion) battery packs of 720 Wh or 1440 Wh.
-- **User Computer Options**: ASUS NUC, Lenovo ThinkStation, or NVIDIA Jetson Orin NX.
-- **Router**: Teltonika RUTX11 for communication with dual-band Wi-Fi, 4G LTE, and GNSS capabilities.
-- **IMU**: Inertial Measurement Unit for navigation and stability.
+### Design & Durability:
+- **Chassis Rating**: IP54/IP66, providing protection against dust and water.
+- **Operating Temperature**: -20°C to 50°C.
+- **High-Profile Wheels**: Equipped with robust off-road wheels for enhanced traction.
 
-### Human Interaction:
-The Panther is equipped with a user-friendly interface for control and monitoring. It supports the Robot Operating System (ROS and ROS 2), making it easy to develop applications and integrate additional sensors and components like LIDAR and cameras. The platform includes an Emergency Management Unit (EMU) for safe operation, with physical and software emergency stop features.
+### Power & Runtime:
+- **Motors**: Four BLDC motors, each with a power of 473 W, allowing for a peak power of 900 W.
+- **Battery Options**: 
+  - 720 Wh (3.5 - 8 hours runtime)
+  - 1440 Wh (7 - 16 hours runtime)
+- **Charging**: Rechargeable via a dedicated charger, with full charge achievable in 7 hours for the 720 Wh variant.
 
-### Capabilities:
-- **Autonomous Navigation**: Can be equipped with sensors for navigation and mapping tasks in various environments, including agriculture, construction, and inspection.
-- **Modular Design**: The V-slot mounting rail allows for seamless integration of additional equipment.
-- **Power Ports**: Multiple power ports provide electrical power for user devices, supporting various voltages (5 V, 12 V, 19 V, AUX Power).
+### Sensors & Components:
+- **Integration Capabilities**: Supports LIDAR, 3D cameras, manipulators, and other sensors via V-slot mounting rails and various power ports.
+- **User Power Ports**: Multiple outputs (5V, 12V, 19V, AUX) for user devices.
+
+### Communication:
+- **Network**: Equipped with a Teltonika RUTX11 router supporting Ethernet, Wi-Fi (2.4GHz & 5GHz), and cellular connectivity options (4G LTE).
+- **Connectivity Options**: Includes GNSS for navigation and various serial communication protocols (CAN, RS232, RS485).
+
+### Software & Programming:
+- **Operating System**: Built on a custom Ubuntu-based OS with support for ROS and ROS 2.
+- **Development**: Open-source drivers available, making integration and project development intuitive.
+
+### Safety Features:
+- **Emergency Management Unit (EMU)**: Equipped with an emergency stop button and system to halt operations in critical situations.
+- **User Safety Interface**: Provides electrical safety for user equipment and emergency signals.
 
 ### Limitations:
-- **Weight and Size**: The 55 kg weight and dimensions may limit access to certain terrains or conditions.
-- **Operating Conditions**: While robust, the effectiveness of the Panther may vary based on environmental factors such as extreme temperatures or heavy precipitation.
+- **Speed**: Limited to a maximum speed of 2 m/s, which may not be suitable for time-sensitive operations.
+- **Environmental Constraints**: While designed for outdoor use, extreme conditions (e.g., heavy rainfall or flooding) can affect performance despite its IP ratings.
 
-The Panther is designed for versatility and resilience, making it suitable for a wide range of outdoor applications while providing a robust framework for research and development projects in robotics.
+The Panther platform is versatile and adaptable, making it suitable for various applications, including agriculture, construction, and inspection tasks.

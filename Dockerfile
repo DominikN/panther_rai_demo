@@ -30,9 +30,9 @@ RUN --mount=type=secret,id=OPENAI_API_KEY,env=OPENAI_API_KEY \
     source ./setup_shell.sh && \
     yes | poetry run parse_whoami_package src/panther_whoami/description
 
-# RUN rosdep install --from-paths src --ignore-src -r -y
-# RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
-#     colcon build --symlink-install
+RUN rosdep install --from-paths src --ignore-src -r -y
+RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
+    colcon build --symlink-install
 
 # # RUN export PATH="$HOME/.local/bin:$PATH" && \
 # #     source ./setup_shell.sh

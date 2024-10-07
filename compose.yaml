@@ -20,7 +20,7 @@ services:
       - 8501:8501
     environment:
       - OPENAI_API_KEY
-    command: streamlit run src/rai_hmi/rai_hmi/text_hmi.py
+    command: streamlit run src/rai_hmi/rai_hmi/text_hmi.py panther_whoami
 
 
 secrets:

@@ -37,4 +37,7 @@ RUN source /opt/ros/$ROS_DISTRO/setup.bash && \
 # # RUN export PATH="$HOME/.local/bin:$PATH" && \
 # #     source ./setup_shell.sh
 
+RUN apt update && apt install -y \
+        ros-$ROS_DISTRO-opennav-docking-msgs
+
 COPY ./ros_entrypoint.sh /

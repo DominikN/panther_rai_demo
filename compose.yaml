@@ -1,5 +1,5 @@
 services:
-  panther-whoami:
+  whoami:
     build:
       dockerfile: Dockerfile
       context: .
@@ -8,6 +8,18 @@ services:
     environment:
       - OPENAI_API_KEY
     command: ros2 run rai_whoami rai_whoami_node --ros-args -p robot_description_package:="panther_whoami" 
+
+  agent:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      secrets:
+        - OPENAI_API_KEY
+    environment:
+      - OPENAI_API_KEY
+    volumes:
+      - ./panther_agent.py/:/panther_agent.py
+    command: python /panther_agent.py
 
   text-hmi:
     build:
@@ -21,7 +33,7 @@ services:
       - OPENAI_API_KEY
     command: streamlit run src/rai_hmi/rai_hmi/text_hmi.py panther_whoami
 
-  robot_simulation:
+  simulation:
     build:
       context: docking_robot
     runtime: nvidia

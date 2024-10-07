@@ -6,6 +6,12 @@ https://github.com/RobotecAI/rai/blob/development/docs/create_robots_whoami.md
 
 ## Quick Start
 
+### update submodules
+
+```bash
+git submodule update --init --recursive
+```
+
 ### `OPENAI_API_KEY` secret key setup
 
 Create `.env` file in the root directory of this repo with the following content:

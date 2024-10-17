@@ -22,6 +22,15 @@ OPENAI_API_KEY=sk-xxxxxxxxx-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
 And paste here your own OpenAI API key.
 
+### `LANGFUSE_*_KEY` secrets key setup
+
+In the same `.env` file add your Public and Secret Keys for your project at https://cloud.langfuse.com/
+
+```bash
+LANGFUSE_PUBLIC_KEY=pk-lf-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+LANGFUSE_SECRET_KEY=sk-lf-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+
 ### Building
 
 ```bash

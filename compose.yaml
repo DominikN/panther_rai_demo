@@ -5,8 +5,12 @@ services:
       context: .
       secrets:
         - OPENAI_API_KEY
+    volumes:
+      - ./config.toml/:/rai/config.toml # override default config
     environment:
       - OPENAI_API_KEY
+      - LANGFUSE_PUBLIC_KEY
+      - LANGFUSE_SECRET_KEY
     command: ros2 run rai_whoami rai_whoami_node --ros-args -p robot_description_package:="panther_whoami" 
 
   agent:
@@ -15,10 +19,13 @@ services:
       context: .
       secrets:
         - OPENAI_API_KEY
-    environment:
-      - OPENAI_API_KEY
     volumes:
       - ./panther_agent.py/:/panther_agent.py
+      - ./config.toml/:/rai/config.toml # override default config
+    environment:
+      - OPENAI_API_KEY
+      - LANGFUSE_PUBLIC_KEY
+      - LANGFUSE_SECRET_KEY
     command: python /panther_agent.py
 
   text-hmi:
@@ -29,20 +36,24 @@ services:
         - OPENAI_API_KEY
     ports:
       - 8501:8501
+    volumes:
+      - ./config.toml/:/rai/config.toml # override default config
     environment:
       - OPENAI_API_KEY
+      - LANGFUSE_PUBLIC_KEY
+      - LANGFUSE_SECRET_KEY
     command: streamlit run src/rai_hmi/rai_hmi/text_hmi.py panther_whoami
 
   simulation:
     build:
       context: docking_robot
     runtime: nvidia
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
     environment:
       - DISPLAY
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
 
 secrets:
   OPENAI_API_KEY:
